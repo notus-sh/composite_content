@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "composite_content/version"
+require_relative 'composite_content/version'
 
 module CompositeContent
   class Error < StandardError; end
