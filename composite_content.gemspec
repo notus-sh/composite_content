@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.metadata['changelog_uri'] = "#{spec.homepage}/CHANGELOG.md"
 
   spec.metadata['allowed_push_host'] = 'https://rubygems.org'
+  spec.metadata['rubygems_mfa_required'] = 'true'
 
   spec.require_paths = ['lib']
   spec.files = Dir.chdir(__dir__) do
@@ -28,7 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 2.6.0'
 
-  # spec.add_dependency "example-gem", "~> 1.0"
+  spec.add_dependency "rails", ">= 6.0"
 
   # Development tools
   spec.add_development_dependency 'bundler',        '~> 2.1'
@@ -37,5 +38,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-rake'
   spec.add_development_dependency 'rubocop-rspec'
-  spec.metadata['rubygems_mfa_required'] = 'true'
 end
