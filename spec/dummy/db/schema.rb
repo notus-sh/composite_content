@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_07_191410) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_07_210334) do
   create_table "composite_content_blocks", force: :cascade do |t|
     t.string "parent_type"
     t.integer "parent_id"
@@ -36,6 +36,16 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_07_191410) do
     t.string "source"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "composite_content_slots", force: :cascade do |t|
+    t.string "parent_type"
+    t.integer "parent_id"
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_composite_content_slots_on_name"
+    t.index ["parent_type", "parent_id"], name: "index_composite_content_slots_on_parent"
   end
 
   create_table "composite_content_texts", force: :cascade do |t|
