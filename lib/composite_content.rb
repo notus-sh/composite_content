@@ -1,5 +1,7 @@
-require "composite_content/version"
-require "composite_content/engine"
+# frozen_string_literal: true
+
+require 'composite_content/version'
+require 'composite_content/engine'
 
 module CompositeContent
   # Your code goes here...

@@ -5,6 +5,5 @@ source 'https://rubygems.org'
 # Specify your gem's dependencies in composite_content.gemspec
 gemspec
 
-gem "sqlite3"
-gem "sprockets-rails"
-
+gem 'sprockets-rails'
+gem 'sqlite3'
