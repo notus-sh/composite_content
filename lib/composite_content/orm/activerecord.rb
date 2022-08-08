@@ -6,17 +6,21 @@ module CompositeContent
       extend ActiveSupport::Concern
 
       module ClassMethods
-        def has_composite_content(name = :content, options = {})
+        def has_composite_content(name = :blocks, **options)
           BlocksAssociationMethods.setup_association(self, name.to_sym, options)
         end
 
-        def has_composite_content_slot(name, options = {})
+        def has_composite_content_slot(name, **options)
           SlotAssociationMethods.setup_association(self, name.to_sym, options)
 
           define_method name do
             send("#{name}=", CompositeContent::Slot.new(name: name, parent: self)) unless super
             super
           end
+        end
+
+        def has_composite_content_slots(*names, **options)
+          Array(names).each { |name| has_composite_content_slot(name, **options) }
         end
       end
 
