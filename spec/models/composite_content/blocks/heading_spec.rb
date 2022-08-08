@@ -12,8 +12,8 @@ RSpec.describe CompositeContent::Blocks::Heading, type: :model do
   it { is_expected.to validate_presence_of(:level) }
   it do
     expect(subject).to validate_numericality_of(:level)
-                         .is_greater_than_or_equal_to(1)
-                         .is_less_than_or_equal_to(6)
-                         .only_integer
+      .is_greater_than_or_equal_to(1)
+      .is_less_than_or_equal_to(6)
+      .only_integer
   end
 end

@@ -1,11 +1,27 @@
+inherit_mode:
+  merge:
+    - Exclude
+
 AllCops:
   NewCops: enable
   TargetRubyVersion: 2.6
+  Exclude:
+    - 'spec/dummy/db/schema.rb'
 
 Layout/LineLength:
   Max: 120
 
+# DSLs produce long blocks
 Metrics/BlockLength:
   Exclude:
     - '*.gemspec'
+    - '**/db/migrate/*.rb'
     - 'spec/**/*_spec.rb'
+Metrics/MethodLength:
+  Exclude:
+    - '**/db/migrate/*.rb'
+
+Style/Documentation:
+  Exclude:
+    - '**/db/migrate/*.rb'
+    - 'spec/dummy/**/*.rb'

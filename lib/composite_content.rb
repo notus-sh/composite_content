@@ -3,6 +3,6 @@
 require 'composite_content/version'
 require 'composite_content/engine'
 
-module CompositeContent
+module CompositeContent # :nodoc:
   # Your code goes here...
 end
