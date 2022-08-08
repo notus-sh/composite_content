@@ -3,9 +3,9 @@
 require 'models/shared/block_container'
 require 'models/shared/model_with_container'
 
-RSpec.describe CompositeContent::ORM::ActiveRecord, type: :unit do
+RSpec.describe CompositeContent::ActiveRecord, type: :unit do
   context 'with any ActiveRecord model' do
-    subject(:model) { Class.new(ActiveRecord::Base) } # rubocop:disable Rails/ApplicationRecord
+    subject(:model) { Class.new(::ActiveRecord::Base) } # rubocop:disable Rails/ApplicationRecord
 
     it { is_expected.to respond_to(:has_composite_content) }
     it { is_expected.to respond_to(:has_composite_content_slot) }

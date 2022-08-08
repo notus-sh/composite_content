@@ -2,7 +2,7 @@
 
 module CompositeContent
   module Blocks
-    class Text < ActiveRecord::Base
+    class Text < ::ActiveRecord::Base
       include CompositeContent::Blockable
 
       validates :content,

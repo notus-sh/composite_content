@@ -30,12 +30,13 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = '>= 2.6.0'
 
   spec.add_dependency 'acts_as_list',   '~> 1.0.4'
+  spec.add_dependency 'cocooned',       '~> 1.4.0'
   spec.add_dependency 'rails',          '>= 6.0'
 
   # Development tools
   spec.add_development_dependency 'bundler',          '~> 2.1'
   spec.add_development_dependency 'rake',             '~> 13.0'
-  spec.add_development_dependency 'rspec',            '~> 3.10.0'
+  spec.add_development_dependency 'rspec',            '~> 3.10'
   spec.add_development_dependency 'rubocop'
   spec.add_development_dependency 'rubocop-performance'
   spec.add_development_dependency 'rubocop-rails'

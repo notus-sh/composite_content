@@ -2,7 +2,7 @@
 
 module CompositeContent
   # Base class for all types of blocks.
-  class Block < ActiveRecord::Base
+  class Block < ::ActiveRecord::Base
     belongs_to :parent,
                polymorphic: true
 

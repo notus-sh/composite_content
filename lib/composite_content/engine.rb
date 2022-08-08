@@ -16,8 +16,8 @@ module CompositeContent
 
     initializer 'composite_content.active_record' do |_app|
       ::ActiveSupport.on_load :active_record do
-        require 'composite_content/orm/activerecord'
-        include CompositeContent::ORM::ActiveRecord
+        require 'composite_content/active_record'
+        include CompositeContent::ActiveRecord
       end
     end
   end

@@ -2,7 +2,7 @@
 
 module CompositeContent
   module Blocks
-    class Heading < ActiveRecord::Base
+    class Heading < ::ActiveRecord::Base
       include CompositeContent::Blockable
 
       validates :level,
