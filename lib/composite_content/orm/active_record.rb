@@ -20,11 +20,7 @@ module CompositeContent
         # collections (i.e.: a main content and a sidebar content).
         def has_composite_content_slot(name, **options)
           SlotAssociationMethods.setup_association(self, name.to_sym, options)
-
-          define_method name do
-            send("#{name}=", CompositeContent::Slot.new(name: name, parent: self)) unless super
-            super
-          end
+          SlotAssociationMethods.setup_method(self, name.to_sym)
         end
 
         # Add multiple slots on a model.
@@ -63,6 +59,13 @@ module CompositeContent
           def setup_association(base, name, options = {})
             base.has_one name, -> { where(name: name) }, **association_options(options)
             base.accepts_nested_attributes_for name, reject_if: :all_blank
+          end
+
+          def setup_method(base, name)
+            base.define_method name do
+              send("#{name}=", CompositeContent::Slot.new(name: name, parent: self)) if super().blank?
+              super()
+            end
           end
 
           protected

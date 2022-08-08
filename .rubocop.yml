@@ -1,3 +1,10 @@
+---
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+
 inherit_mode:
   merge:
     - Exclude
@@ -20,6 +27,11 @@ Metrics/BlockLength:
 Metrics/MethodLength:
   Exclude:
     - '**/db/migrate/*.rb'
+
+Rails/ApplicationRecord:
+  Exclude:
+    - 'app/**/*.rb'
+    - 'lib/**/*.rb'
 
 Style/Documentation:
   Exclude:

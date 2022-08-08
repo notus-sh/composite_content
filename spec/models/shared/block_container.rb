@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.shared_examples 'a block container' do
+RSpec.shared_examples 'a block container', type: :model do
   it do
     expect(subject).to have_many(:blocks)
       .order(position: :asc)
