@@ -2,6 +2,7 @@
 
 require 'rails'
 require 'acts_as_list'
+require 'cocooned'
 
 module CompositeContent
   class Engine < ::Rails::Engine # :nodoc:
