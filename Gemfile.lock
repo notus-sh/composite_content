@@ -5,7 +5,6 @@ PATH
       active_model_validations_reflection
       acts_as_list (~> 1.0.4)
       cocooned (~> 1.4.0)
-      net-smtp
       rails (>= 6.1.0)
 
 GEM
