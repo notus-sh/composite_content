@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     composite_content (0.1.0)
+      active_model_validations_reflection
       acts_as_list (~> 1.0.4)
       cocooned (~> 1.4.0)
       rails (>= 6.0)
@@ -54,6 +55,9 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model_validations_reflection (0.1.2)
+      activemodel (>= 3.2)
+      activesupport (>= 3.2)
     activejob (7.0.3.1)
       activesupport (= 7.0.3.1)
       globalid (>= 0.3.6)

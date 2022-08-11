@@ -3,15 +3,15 @@
 class CreateCompositeContentSlots < ActiveRecord::Migration[6.0]
   def change
     create_table :composite_content_slots do |t|
+      t.string :type,
+               null: false,
+               index: true
+
       t.references :parent,
                    polymorphic: true,
                    index: { name: 'index_composite_content_slots_on_parent' }
 
-      t.string :name
-
       t.timestamps
-
-      t.index %i[name]
     end
   end
 end

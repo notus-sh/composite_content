@@ -2,8 +2,8 @@
 
 module CompositeContent
   module Blocks
-    class Quote < ::ActiveRecord::Base
-      include CompositeContent::Blockable
+    class Quote < ::CompositeContent::Model::Base
+      include ::CompositeContent::Model::Blockable
 
       validates :content,
                 presence: true

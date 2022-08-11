@@ -2,8 +2,8 @@
 
 module CompositeContent
   module Blocks
-    class Heading < ::ActiveRecord::Base
-      include CompositeContent::Blockable
+    class Heading < ::CompositeContent::Model::Base
+      include ::CompositeContent::Model::Blockable
 
       validates :level,
                 presence: true,

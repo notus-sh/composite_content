@@ -3,37 +3,43 @@
 module CompositeContent
   module ActiveRecord # :nodoc:
     extend ActiveSupport::Concern
-    extend ActiveSupport::Autoload
-
-    autoload :BlocksAssociation
-    autoload :SlotAssociation
 
     # Integration methods with ActiveRecord models
     # These methods are available on any ActiveRecord model once CompositeContent is loaded.
     #
     # rubocop:disable Naming/PredicateName
     module ClassMethods
-      # Add a :blocks association on a model to host a blocks collection as composite content.
-      def has_composite_content(name = :blocks, **options)
-        association = BlocksAssociation.new(self, name.to_sym, options)
-        association.setup_association
-      end
+      def has_composite_content(name = :composite_content, types: [])
+        CompositeContent::Model::Builder::Block.build(self, name, types)
+        slot_class = CompositeContent::Model::Builder::Slot.build(self, name, types)
 
-      # Add a single slot on a model to host composite content, through an additional layer.
-      # This can be used to add multiple slots on the same model to host multiple blocks
-      # collections (i.e.: a main content and a sidebar content).
-      def has_composite_content_slot(name, **options)
-        association = SlotAssociation.new(self, name.to_sym, options)
-        association.setup_association
-        association.setup_method
-      end
+        has_one name, class_name: slot_class.name, as: :parent, dependent: :destroy
+        accepts_nested_attributes_for name, reject_if: :all_blank
 
-      # Add multiple slots on a model.
-      # See has_composite_content_slot for details.
-      def has_composite_content_slots(*names, **options)
-        Array(names).each { |name| has_composite_content_slot(name, **options) }
+        include Mixins.instance_mixin(name)
+        extend Mixins.class_mixin(name)
       end
     end
     # rubocop:enable Naming/PredicateName
+
+    module Mixins
+      class << self
+        def instance_mixin(name)
+          Module.new do
+            define_method name do
+              super() || send(:"build_#{name}")
+            end
+          end
+        end
+
+        def class_mixin(name)
+          Module.new do
+            define_method "strong_parameters_for_#{name}" do
+              reflect_on_association(name).class_name.constantize.strong_parameters
+            end
+          end
+        end
+      end
+    end
   end
 end

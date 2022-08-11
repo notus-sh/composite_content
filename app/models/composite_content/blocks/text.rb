@@ -2,8 +2,8 @@
 
 module CompositeContent
   module Blocks
-    class Text < ::ActiveRecord::Base
-      include CompositeContent::Blockable
+    class Text < ::CompositeContent::Model::Base
+      include ::CompositeContent::Model::Blockable
 
       validates :content,
                 presence: true

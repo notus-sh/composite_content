@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rails'
+require 'active_model_validations_reflection'
 require 'acts_as_list'
 require 'cocooned'
 
