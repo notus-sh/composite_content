@@ -40,18 +40,18 @@ RSpec.describe CompositeContent::Model::Builder::Slot, type: :unit do
       end
 
       it 'returns strong parameters description for CompositeContent::Block' do
-        params = klass.strong_parameters.find {|e| e.is_a?(Hash) }
+        params = klass.strong_parameters.find { |e| e.is_a?(Hash) }
         expect(params[:blocks_attributes]).to include(:id, :position, :blockable_type, :_destroy)
       end
 
       it 'returns strong parameters description for allowed block types' do
-        params = klass.strong_parameters.find {|e| e.is_a?(Hash) }
+        params = klass.strong_parameters.find { |e| e.is_a?(Hash) }
         expect(params[:blocks_attributes]).to include(a_hash_including(:blockable_attributes))
       end
 
       it 'returns strong parameters description only for allowed block types' do
-        blocks_params = klass.strong_parameters.find {|e| e.is_a?(Hash) }
-        blockable_params = blocks_params[:blocks_attributes].find {|e| e.is_a?(Hash) }
+        blocks_params = klass.strong_parameters.find { |e| e.is_a?(Hash) }
+        blockable_params = blocks_params[:blocks_attributes].find { |e| e.is_a?(Hash) }
         expect(blockable_params[:blockable_attributes]).to contain_exactly(:id, :content, :source)
       end
     end
@@ -63,9 +63,9 @@ RSpec.describe CompositeContent::Model::Builder::Slot, type: :unit do
 
       it do
         expect(slot).to have_many(:blocks)
-                          .class_name('Parent::CompositeContentBlock')
-                          .inverse_of(:slot)
-                          .dependent(:destroy)
+          .class_name('Parent::CompositeContentBlock')
+          .inverse_of(:slot)
+          .dependent(:destroy)
       end
 
       it { is_expected.to accept_nested_attributes_for(:blocks) }

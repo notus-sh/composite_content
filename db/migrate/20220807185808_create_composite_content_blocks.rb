@@ -5,7 +5,7 @@ class CreateCompositeContentBlocks < ActiveRecord::Migration[6.0]
     create_table :composite_content_blocks do |t|
       t.references :slot
       t.references :blockable, polymorphic: true,
-                   index: { name: 'index_composite_content_blocks_on_blockable' }
+                               index: { name: 'index_composite_content_blocks_on_blockable' }
       t.integer :position, index: true
 
       t.timestamps

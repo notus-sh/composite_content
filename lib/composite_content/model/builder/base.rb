@@ -9,7 +9,7 @@ module CompositeContent
 
         class << self
           def build(parent, association, types = [])
-            self.new.build(parent, association, types)
+            new.build(parent, association, types)
           end
         end
 

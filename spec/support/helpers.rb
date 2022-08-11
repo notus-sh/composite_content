@@ -7,11 +7,13 @@ module Helpers
         yield if block_given?
       end
 
-      klass.class_eval <<-RUBY
+      # rubocop:disable Style/DocumentDynamicEvalDefinition
+      klass.class_eval <<-RUBY, __FILE__, __LINE__ + 1
         def name
           "#{model_name}"
         end
       RUBY
+      # rubocop:enable Style/DocumentDynamicEvalDefinition
 
       stub_const(model_name, klass)
       klass

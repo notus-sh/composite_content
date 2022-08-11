@@ -33,6 +33,10 @@ Rails/ApplicationRecord:
     - 'app/**/*.rb'
     - 'lib/**/*.rb'
 
+Rails/I18nLocaleTexts:
+  Exclude:
+    - 'spec/dummy/**/*.rb'
+
 Style/Documentation:
   Exclude:
     - '**/db/migrate/*.rb'

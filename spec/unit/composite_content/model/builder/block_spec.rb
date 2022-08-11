@@ -8,7 +8,7 @@ RSpec.describe CompositeContent::Model::Builder::Block, type: :unit do
 
     let(:association) { :composite_content }
     let(:parent) { dummy_model('Parent') }
-    let(:types) { CompositeContent::Engine.config.block_types.dup.shuffle.first(2) }
+    let(:types) { CompositeContent::Engine.config.block_types.dup.sample(2) }
 
     it 'creates a subclass of CompositeContent::Block' do
       expect(klass.new).to be_a(CompositeContent::Block)

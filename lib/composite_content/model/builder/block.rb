@@ -9,7 +9,7 @@ module CompositeContent
       # This allows to set distinct validations on allowed block types used in each composite
       # content.
       class Block < Base
-        alias :build_classname :classname_for_block
+        alias build_classname classname_for_block
 
         def build_class(parent, association, types = [])
           Class.new(::CompositeContent::Block).tap do |klass|

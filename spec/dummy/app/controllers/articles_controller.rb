@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ArticlesController < ApplicationController
-  before_action :set_article, only: %i[ show edit update destroy ]
+  before_action :set_article, only: %i[show edit update destroy]
 
   # GET /articles
   def index
@@ -7,8 +9,7 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1
-  def show
-  end
+  def show; end
 
   # GET /articles/new
   def new
@@ -16,15 +17,14 @@ class ArticlesController < ApplicationController
   end
 
   # GET /articles/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /articles
   def create
     @article = Article.new(article_params)
 
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      redirect_to @article, notice: 'Article was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class ArticlesController < ApplicationController
   # PATCH/PUT /articles/1
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: "Article was successfully updated."
+      redirect_to @article, notice: 'Article was successfully updated.'
     else
       render :edit, status: :unprocessable_entity
     end
@@ -42,19 +42,20 @@ class ArticlesController < ApplicationController
   # DELETE /articles/1
   def destroy
     @article.destroy
-    redirect_to articles_url, notice: "Article was successfully destroyed."
+    redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_article
-      @article = Article.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def article_params
-      params.require(:article)
-            .permit(:title,
-                    composite_content_attributes: Article::strong_parameters_for_composite_content)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_article
+    @article = Article.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def article_params
+    params.require(:article)
+          .permit(:title,
+                  composite_content_attributes: Article.strong_parameters_for_composite_content)
+  end
 end

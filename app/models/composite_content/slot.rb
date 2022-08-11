@@ -24,7 +24,7 @@ module CompositeContent
       end
 
       def blockable_classes
-        @blockable_class ||= begin
+        @blockable_classes ||= begin
           validators = block_class.validators_on_of_kinds(:blockable_type, :inclusion)
           types = validators.collect(&:options).collect { |opts| opts.fetch(:in) }.flatten.compact.uniq
           types.collect(&:constantize)
@@ -45,7 +45,7 @@ module CompositeContent
       end
 
       def blockable_column_names
-        @blokable_column_names ||= begin
+        @blockable_column_names ||= begin
           columns = blockable_classes.collect(&:column_names).flatten.collect(&:to_sym).compact.uniq
           columns - %i[created_at updated_at]
         end

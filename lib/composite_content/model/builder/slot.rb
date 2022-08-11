@@ -10,7 +10,7 @@ module CompositeContent
       # to rely on ActiveRecord default behaviors for Single Table Inheritance models (as adding a
       # constraint on type to queries).
       class Slot < Base
-        alias :build_classname :classname_for_slot
+        alias build_classname classname_for_slot
 
         def build_class(parent, association, _types = [])
           Class.new(CompositeContent::Slot).tap do |klass|

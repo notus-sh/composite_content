@@ -7,7 +7,7 @@ module CompositeContent
     # Integration methods with ActiveRecord models
     # These methods are available on any ActiveRecord model once CompositeContent is loaded.
     #
-    # rubocop:disable Naming/PredicateName
+    # rubocop:disable Naming/PredicateName, Rails/ReflectionClassName
     module ClassMethods
       def has_composite_content(name = :composite_content, types: [])
         CompositeContent::Model::Builder::Block.build(self, name, types)
@@ -20,9 +20,9 @@ module CompositeContent
         extend Mixins.class_mixin(name)
       end
     end
-    # rubocop:enable Naming/PredicateName
+    # rubocop:enable Naming/PredicateName, Rails/ReflectionClassName
 
-    module Mixins
+    module Mixins # :nodoc:
       class << self
         def instance_mixin(name)
           Module.new do
