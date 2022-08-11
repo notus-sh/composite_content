@@ -1,0 +1,10 @@
+---
+en:
+  composite_content:
+    blocks:
+      heading:
+        add: Add a title
+      quote:
+        add: Add a quote
+      text:
+        add: Add a text

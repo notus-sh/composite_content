@@ -12,31 +12,14 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
+    <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
   <h3>Content</h3>
-  <div id="blocks" data-cocooned-options="<%= { reorderable: true }.to_json %>">
-    <%= form.fields_for :composite_content do |composite_content_form| %>
-      <%= composite_content_form.hidden_field :id %>
-      <%= composite_content_form.fields_for :blocks do |block_form| %>
-        <%= render 'composite_content/block/form', f: block_form %>
-      <% end %>
-
-      <div class="links">
-        <%= cocooned_add_item_link 'Add a heading', composite_content_form, :blocks,
-                                   partial: 'composite_content/block/form',
-                                   wrap_object: Proc.new { |b| b.blockable = CompositeContent::Blocks::Heading.new; b } %>
-        <%= cocooned_add_item_link 'Add a quote', composite_content_form, :blocks,
-                                   partial: 'composite_content/block/form',
-                                   wrap_object: Proc.new { |b| b.blockable = CompositeContent::Blocks::Quote.new; b } %>
-        <%= cocooned_add_item_link 'Add a text', composite_content_form, :blocks,
-                                   partial: 'composite_content/block/form',
-                                   wrap_object: Proc.new { |b| b.blockable = CompositeContent::Blocks::Text.new; b } %>
-      </div>
-    <% end %>
-  </div>
+  <%= form.fields_for :composite_content do |composite_content_form| %>
+    <%= render 'composite_content/slot/form', form: composite_content_form %>
+  <% end %>
 
   <div>
     <%= form.submit %>

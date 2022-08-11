@@ -12,6 +12,10 @@ module CompositeContent
                 touch: true,
                 dependent: :destroy
       end
+
+      def block_type
+        self.class.name.demodulize.underscore
+      end
     end
   end
 end
