@@ -1,6 +1,6 @@
 # CompositeContent
 
-[![Build Status](https://travis-ci.com/notus-sh/composite_content.svg?branch=master)](https://travis-ci.com/notus-sh/composite_content)
+[![Build Status](https://app.travis-ci.com/notus-sh/composite_content.svg?branch=master)](https://app.travis-ci.com/notus-sh/composite_content)
 [![Gem Version](https://badge.fury.io/rb/composite_content.svg)](https://badge.fury.io/rb/composite_content)
 
 `CompositeContent` add capacities to your Rails application to manage complex contents made of blocks with ease.
