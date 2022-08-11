@@ -32,7 +32,8 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'active_model_validations_reflection'
   spec.add_dependency 'acts_as_list', '~> 1.0.4'
   spec.add_dependency 'cocooned', '~> 1.4.0'
-  spec.add_dependency 'rails', '>= 6.0'
+  spec.add_dependency 'net-smtp'
+  spec.add_dependency 'rails', '>= 6.1.0'
 
   # Development tools
   spec.add_development_dependency 'bundler', '~> 2.1'
