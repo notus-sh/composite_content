@@ -1,0 +1,7 @@
+<figure class="quote">
+  <blockquote><%= block.blockable.content %></blockquote>
+
+  <% if block.blockable.source.present? %>
+    <figcaption><%= block.blockable.source %></figcaption>
+  <% end %>
+</figure>

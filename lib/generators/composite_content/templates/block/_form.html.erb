@@ -1,0 +1,13 @@
+<div class="cocooned-item">
+  <%= form.hidden_field :id %>
+  <%= form.hidden_field :position %>
+  <%= form.hidden_field :blockable_type %>
+
+  <%= form.fields_for :blockable, form.object.blockable do |blockable_form| %>
+    <%= render "composite_content/blocks/#{form.object.blockable.block_type}/form", form: blockable_form %>
+  <% end %>
+
+  <%= composite_content_move_block_up_link form %>
+  <%= composite_content_move_block_down_link form %>
+  <%= composite_content_remove_block_link form %>
+</div>

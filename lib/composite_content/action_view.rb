@@ -1,7 +1,17 @@
 # frozen_string_literal: true
 
 module CompositeContent
+  # Additional views helpers to manipulate composite content.
   module ActionView
+    # Render the content of a CompositeContent::Slot.
+    def composite_content_render(slot)
+      renders = slot.blocks.collect do |block|
+        render "composite_content/blocks/#{block.blockable.block_type}/show", block: block
+      end
+
+      safe_join(renders)
+    end
+
     # Output an action link to add a block to a slot.
     #
     # ==== Signatures
@@ -32,7 +42,7 @@ module CompositeContent
     # and :wrap_object are forced on purpose. Any other option will be passed.
     # See the documentation of cocooned_add_item_link for details.
     def composite_content_add_block_link(*args, &block)
-      return composite_content_add_block_link(capture(&block), *args) if block_given?
+      return composite_content_add_block_link(capture(&block), *args) if block
       return composite_content_add_block_link(nil, *args) if args.first.respond_to?(:object)
 
       label, form, block_type, options = *args
@@ -40,7 +50,7 @@ module CompositeContent
       opts = (options || {}).except(:count, :form_name, :force_non_association_create)
                             .merge!(form_name: :form,
                                     partial: 'composite_content/block/form',
-                                    wrap_object: ->(block) { composite_content_wrap_block(block, block_type) })
+                                    wrap_object: ->(b) { composite_content_wrap_block(b, block_type) })
 
       cocooned_add_item_link(label, form, :blocks, opts)
     end
