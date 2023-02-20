@@ -13,18 +13,23 @@ Gem::Specification.new do |spec|
   spec.description   = 'Build complex contents for your ActiveRecord models in a controllable way.'
   spec.homepage      = 'https://github.com/notus-sh/composite_content'
 
-  spec.metadata['homepage_uri'] = spec.homepage
-  spec.metadata['source_code_uri'] = spec.homepage
-  spec.metadata['changelog_uri'] = "#{spec.homepage}/CHANGELOG.md"
+  spec.metadata = {
+    'allowed_push_host' => 'https://rubygems.org',
+    'rubygems_mfa_required' => 'true',
 
-  spec.metadata['allowed_push_host'] = 'https://rubygems.org'
-  spec.metadata['rubygems_mfa_required'] = 'true'
+    'bug_tracker_uri' => 'https://github.com/notus-sh/composite_content/issues',
+    'changelog_uri' => 'https://github.com/notus-sh/composite_content/blob/master/CHANGELOG.md',
+    'homepage_uri' => 'https://github.com/notus-sh/composite_content',
+    'source_code_uri' => 'https://github.com/notus-sh/composite_content',
+    'funding_uri' => 'https://opencollective.com/notus-sh'
+  }
 
   spec.require_paths = ['lib']
-  spec.files = Dir.chdir(__dir__) do
-    `git ls-files -z`.split("\x0").reject do |f|
-      (f == __FILE__) || f.match(%r{\A(?:(?:bin|test|spec|features)/|\.(?:git|travis|circleci)|appveyor)})
-    end
+
+  excluded_dirs = %r{^(.github|dev|spec)/}
+  excluded_files = %w[.gitignore .rspec .rubocop.yml Gemfile Gemfile.lock Rakefile]
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(excluded_dirs) || excluded_files.include?(f)
   end
 
   spec.required_ruby_version = '>= 2.6.0'
