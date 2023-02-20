@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gemspec path: '..'
+gemspec path: '../..'
 
 group :development, :test do
   gem 'rails', '~> 6.1.0'
