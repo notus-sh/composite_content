@@ -10,6 +10,9 @@
 Rich administrable contents used to be managed through WYSIWYG editors. This leaves you with a very poor control over what is allowed inside such content areas and how it will be rendered afterwards: `img` tags may include the full picture as base64 data or, like `iframe`s (pasted from videos or slides sharing code), can have hard-coded dimensions that makes them hard to manipulate in a responsive design; titles hierarchy may not semantically fit in every context where your content will be displayed; rogue CSS classes can be pasted from word processors without being noticed.  
 The list of potential problems in a responsive and multi-channel world goes on…
 
+The Rails team did an amazing work to go one step forward with [ActionText](https://github.com/rails/rails/tree/main/actiontext) and its integration of [ActiveStorage](https://github.com/rails/rails/tree/main/activestorage). But [the Trix editor](https://trix-editor.org/) supports very few options on content types supported by default, seems to have some limitation on extending them to offer more, requires to create custom elements to support new content types (ex: application models) and does not output semantic HTML markup.  
+Great, but there should be a better way…
+
 An alternative to a monolithic WYSIWYG editor is to split your content into manageable chunks, or blocks. Each type of block can have its own properties and options and their definition should give you the ability to carefully manage their content to integrate it in various use cases and/or with other parts of your application. Such system should be extensible, so you can create new types of blocks to fit your needs.
 
 For example:
