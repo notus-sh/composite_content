@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
     'rubygems_mfa_required' => 'true',
 
     'bug_tracker_uri' => 'https://github.com/notus-sh/composite_content/issues',
-    'changelog_uri' => 'https://github.com/notus-sh/composite_content/blob/master/CHANGELOG.md',
+    'changelog_uri' => 'https://github.com/notus-sh/composite_content/blob/main/CHANGELOG.md',
     'homepage_uri' => 'https://github.com/notus-sh/composite_content',
     'source_code_uri' => 'https://github.com/notus-sh/composite_content',
     'funding_uri' => 'https://opencollective.com/notus-sh'
