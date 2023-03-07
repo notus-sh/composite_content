@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    composite_content (1.0.0)
+    composite_content (2.0.0)
       active_model_validations_reflection
       acts_as_list (>= 1.0.4)
       cocooned (~> 2.0.0)
