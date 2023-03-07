@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## Version 2.0.0 (2023-03-07)
+
 ### Breaking changes
 
 * Update Cocooned dependency to `~2.0.0` (#5)  
@@ -17,6 +19,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 * Migrate from Travis CI to Github Actions (#2)
 * Add Ruby 3.2 to the test matrix (#1)
 
-## Version 0.1.0 (2022-08-06)
+## Version 1.0.0 (2022-08-06)
 
 * Initial release
