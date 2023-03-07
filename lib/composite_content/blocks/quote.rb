@@ -2,6 +2,7 @@
 
 module CompositeContent
   module Blocks
+    # Quote block
     class Quote < ::CompositeContent::Model::Base
       include ::CompositeContent::Model::Blockable
 

@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   excluded_dirs = %r{^(.github|dev|spec)/}
-  excluded_files = %w[.gitignore .rspec .rubocop.yml Gemfile Gemfile.lock Rakefile]
+  excluded_files = %w[.gitignore .rspec Gemfile Gemfile.lock Rakefile]
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(excluded_dirs) || excluded_files.include?(f)
   end
@@ -43,10 +43,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler', '~> 2.1'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.10'
-  spec.add_development_dependency 'rubocop'
-  spec.add_development_dependency 'rubocop-performance'
-  spec.add_development_dependency 'rubocop-rails'
-  spec.add_development_dependency 'rubocop-rake'
-  spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'shoulda-matchers', '~> 5.0'
 end

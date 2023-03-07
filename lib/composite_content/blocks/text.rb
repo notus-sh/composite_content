@@ -2,6 +2,7 @@
 
 module CompositeContent
   module Blocks
+    # Text block
     class Text < ::CompositeContent::Model::Base
       include ::CompositeContent::Model::Blockable
 

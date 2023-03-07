@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateCompositeContentHeadings < ActiveRecord::Migration[6.0]
+class CreateCompositeContentHeadings < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :composite_content_headings do |t|
       t.integer :level, null: false, default: 1

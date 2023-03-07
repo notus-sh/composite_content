@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateCompositeContentBlocks < ActiveRecord::Migration[6.0]
+class CreateCompositeContentBlocks < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :composite_content_blocks do |t|
       t.references :slot

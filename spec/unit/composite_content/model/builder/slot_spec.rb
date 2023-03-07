@@ -30,7 +30,7 @@ RSpec.describe CompositeContent::Model::Builder::Slot, type: :unit do
 
     describe '.blockable_classes' do
       it 'returns allowed block types classes' do
-        expect(klass.blockable_classes).to contain_exactly(*types.collect(&:constantize))
+        expect(klass.blockable_classes).to match_array(types.collect(&:constantize))
       end
     end
 

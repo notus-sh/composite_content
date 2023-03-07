@@ -4,7 +4,7 @@ require 'unit/shared/model_with_composite_content'
 
 RSpec.describe CompositeContent::ActiveRecord, type: :unit do
   context 'with any ActiveRecord model' do
-    subject(:model) { Class.new(::ActiveRecord::Base) }
+    subject(:model) { Class.new(ApplicationRecord) }
 
     it { is_expected.to respond_to(:has_composite_content) }
   end

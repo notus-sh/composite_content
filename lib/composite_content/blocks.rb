@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module CompositeContent
-  module Blocks
+  module Blocks # :nodoc:
     extend ActiveSupport::Autoload
 
     autoload :Heading
