@@ -13,8 +13,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
-* Migrate from Travis CI to Github Actions
-* Add Ruby 3.2 to the test matrix
+* Reduce RuboCop configuration to minimal (#6)
+* Migrate from Travis CI to Github Actions (#2)
+* Add Ruby 3.2 to the test matrix (#1)
 
 ## Version 0.1.0 (2022-08-06)
 
