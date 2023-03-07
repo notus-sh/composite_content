@@ -1,4 +1,4 @@
-<div class="cocooned-item">
+<%= cocooned_item do %>
   <%= form.hidden_field :id %>
   <%= form.hidden_field :position %>
   <%= form.hidden_field :blockable_type %>
@@ -10,4 +10,4 @@
   <%= composite_content_move_block_up_link form %>
   <%= composite_content_move_block_down_link form %>
   <%= composite_content_remove_block_link form %>
-</div>
+<% end %>

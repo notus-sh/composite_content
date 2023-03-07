@@ -1,6 +1,6 @@
 <%= form.hidden_field :id %>
 
-<div data-cocooned-options="<%= { reorderable: true }.to_json %>">
+<%= cocooned_container reorderable: true do %>
   <%= form.fields_for :blocks do |block_form| %>
     <%= render 'composite_content/block/form', form: block_form %>
   <% end %>
@@ -10,4 +10,4 @@
     <%= composite_content_add_block_link form, :quote %>
     <%= composite_content_add_block_link form, :text %>
   </div>
-</div>
+<% end %>
