@@ -27,7 +27,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   excluded_dirs = %r{^(.github|dev|spec)/}
-  excluded_files = %w[.gitignore .rspec .rubocop.yml Gemfile Gemfile.lock Rakefile]
+  excluded_files = %w[.gitignore .rspec Gemfile Gemfile.lock Rakefile]
   spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(excluded_dirs) || excluded_files.include?(f)
   end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# rubocop:disable Rails/I18nLocaleTexts
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
@@ -59,3 +60,4 @@ class ArticlesController < ApplicationController
                   composite_content_attributes: Article.strong_parameters_for_composite_content)
   end
 end
+# rubocop:enable Rails/I18nLocaleTexts

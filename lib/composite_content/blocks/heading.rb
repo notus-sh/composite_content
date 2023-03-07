@@ -2,6 +2,7 @@
 
 module CompositeContent
   module Blocks
+    # Heading block
     class Heading < ::CompositeContent::Model::Base
       include ::CompositeContent::Model::Blockable
 

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CreateCompositeContentSlots < ActiveRecord::Migration[6.0]
+class CreateCompositeContentSlots < ActiveRecord::Migration[6.0] # :nodoc:
   def change
     create_table :composite_content_slots do |t|
       t.string :type,
