@@ -14,7 +14,10 @@ module CompositeContent
     #
     #     # In config/initializers/composite_content.rb
     #     require 'composite_content'
-    #     CompositeContent::Engine.config.block_types += %w[CompositeContent::Blocks::Image]
+    #     CompositeContent::Engine.config.tap do |config|
+    #       config.block_types += %w[CompositeContent::Blocks::Image]
+    #       config.views_path = 'shared/composite_content'
+    #     end
 
     # Allowed block types
     config.block_types = %w[
@@ -22,6 +25,10 @@ module CompositeContent
       CompositeContent::Blocks::Quote
       CompositeContent::Blocks::Text
     ]
+
+    # Path where the composite content partials are stored in your application.
+    # Relative to `app/views/`
+    config.views_path = 'composite_content'
 
     # Engine internals
     #

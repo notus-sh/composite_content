@@ -6,7 +6,7 @@ module CompositeContent
     # Render the content of a CompositeContent::Slot.
     def composite_content_render(slot)
       renders = slot.blocks.collect do |block|
-        render "composite_content/blocks/#{block.blockable.block_type}/show", block: block
+        render "#{CompositeContent::Engine.config.views_path}/blocks/#{block.blockable.block_type}/show", block: block
       end
 
       safe_join(renders)
@@ -49,7 +49,7 @@ module CompositeContent
       label ||= composite_content_default_label(block_type)
       opts = (options || {}).except(:count, :form_name, :force_non_association_create)
                             .merge!(form_name: :form,
-                                    partial: 'composite_content/block/form',
+                                    partial: "#{CompositeContent::Engine.config.views_path}/block/form",
                                     wrap_object: ->(b) { composite_content_wrap_block(b, block_type) })
 
       cocooned_add_item_link(label, form, :blocks, opts)

@@ -2,7 +2,8 @@
 
 <%= cocooned_container reorderable: true do %>
   <%= form.fields_for :blocks do |block_form| %>
-    <%= render 'composite_content/block/form', form: block_form %>
+    <%= render "#{CompositeContent::Engine.config.views_path}/block/form",
+               form: block_form %>
   <% end %>
 
   <div class="links">

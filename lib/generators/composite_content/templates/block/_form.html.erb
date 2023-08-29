@@ -4,7 +4,8 @@
   <%= form.hidden_field :blockable_type %>
 
   <%= form.fields_for :blockable, form.object.blockable do |blockable_form| %>
-    <%= render "composite_content/blocks/#{form.object.blockable.block_type}/form", form: blockable_form %>
+    <%= render "#{CompositeContent::Engine.config.views_path}/blocks/#{form.object.blockable.block_type}/form",
+               form: blockable_form %>
   <% end %>
 
   <%= composite_content_move_block_up_link form %>
