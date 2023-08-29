@@ -97,7 +97,7 @@ In your forms, make composite content editable with:
 
 ```erbruby
 <%= form.fields_for :composite_content do |composite_content_form| %>
-  <%= render 'composite_content/slot/form', form: composite_content_form %>
+  <%= render "#{CompositeContent::Engine.config.views_path}/slot/form", form: composite_content_form %>
 <% end %>
 ```
 
