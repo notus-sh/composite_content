@@ -32,23 +32,26 @@ module CompositeContent
       end
 
       def strong_parameters
-        [:id, { blocks_attributes: block_column_names + [{ blockable_attributes: blockable_column_names }, :_destroy] }]
+        [
+          :id,
+          { blocks_attributes: block_strong_parameters_names + [
+            { blockable_attributes: blockable_strong_parameters_names },
+            :_destroy]
+          }
+        ]
       end
 
       protected
 
-      def block_column_names
-        @block_column_names ||= begin
-          columns = block_class.column_names.collect(&:to_sym)
-          columns - %i[slot_id blockable_id created_at updated_at]
+      def block_strong_parameters_names
+        @block_strong_parameters_names ||= begin
+          parameters = block_class.column_names.collect(&:to_sym)
+          parameters - %i[slot_id blockable_id created_at updated_at]
         end
       end
 
-      def blockable_column_names
-        @blockable_column_names ||= begin
-          columns = blockable_classes.collect(&:column_names).flatten.collect(&:to_sym).compact.uniq
-          columns - %i[created_at updated_at]
-        end
+      def blockable_strong_parameters_names
+        @blockable_strong_parameters_names ||= blockable_classes.collect(&:strong_parameters_names).flatten.compact.uniq
       end
     end
   end
