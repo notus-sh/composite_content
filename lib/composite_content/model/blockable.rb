@@ -16,6 +16,12 @@ module CompositeContent
       def block_type
         self.class.name.demodulize.underscore
       end
+
+      module ClassMethods
+        def strong_parameters_names
+          column_names.collect(&:to_sym) - %i[created_at updated_at]
+        end
+      end
     end
   end
 end
