@@ -36,8 +36,8 @@ module CompositeContent
           :id,
           { blocks_attributes: block_strong_parameters_names + [
             { blockable_attributes: blockable_strong_parameters_names },
-            :_destroy]
-          }
+            :_destroy
+          ] }
         ]
       end
 
