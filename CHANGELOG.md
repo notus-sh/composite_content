@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## Version 2.1.0 (2023-08-29)
+
+### Added
+
+* Allow to customize strong parameters names on a block class with `.strong_parameters_names` (#11)
+* Allow to change composite_content views base path with `CompositeContent::Engine.config.views_path` (#10)
+
+### Fixed
+
+* Typo in french translations
+
 ## Version 2.0.0 (2023-03-07)
 
 ### Breaking changes
