@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+
+* Compatibility with Rails 7.1 (#14)
+* Update test matrix (#14)  
+  Add Ruby 3.3. Drop Ruby 2.6 and Ruby 2.7
+
+
 ## Version 2.1.0 (2023-08-29)
 
 ### Added
