@@ -14,7 +14,7 @@ RSpec.shared_examples 'a model with composite content', type: :model do |parent,
 
   describe ".strong_parameters_for_#{association}" do
     it 'returns slot class strong parameters definition Hash' do
-      expect(parent.send("strong_parameters_for_#{association}")).to eq(classname.constantize.strong_parameters)
+      expect(parent.send(:"strong_parameters_for_#{association}")).to eq(classname.constantize.strong_parameters)
     end
   end
 end

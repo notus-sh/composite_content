@@ -34,7 +34,7 @@ module CompositeContent
 
         def class_mixin(name)
           Module.new do
-            define_method "strong_parameters_for_#{name}" do
+            define_method :"strong_parameters_for_#{name}" do
               reflect_on_association(name).class_name.constantize.strong_parameters
             end
           end
