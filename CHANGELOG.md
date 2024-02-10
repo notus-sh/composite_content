@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+* Compatibility with Cocooned 2.1 (#15)
 * Compatibility with Rails 7.1 (#14)
 * Update test matrix (#14)  
   Add Ruby 3.3. Drop Ruby 2.6 and Ruby 2.7
