@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+
+* Update test matrix to add Rails 7.2 (#17)
+
 ## Version 2.1.1 (2024-02-10)
 
 ### Changed
