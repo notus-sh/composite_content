@@ -1,0 +1,14 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gemspec path: '../..'
+
+group :development, :test do
+  gem 'rails', '~> 7.1.0'
+  gem 'sqlite3'
+
+  gem 'net-imap'
+  gem 'net-pop'
+  gem 'net-smtp'
+end
