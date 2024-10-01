@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
     f.match(excluded_dirs) || excluded_files.include?(f)
   end
 
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 2.7.0'
 
   spec.add_dependency 'active_model_validations_reflection'
   spec.add_dependency 'acts_as_list', '>= 1.0.4'
