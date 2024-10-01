@@ -8,6 +8,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+* Reintroduce Ruby 2.7 into the test matrix (#20)  
+  So tested rubies match with supported Rails versions minimum requirements
+* Drop support for Rails 6.1 (#20)
 * Update test matrix to add Rails 7.2 (#17)
 
 ## Version 2.1.1 (2024-02-10)

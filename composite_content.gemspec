@@ -32,16 +32,15 @@ Gem::Specification.new do |spec|
     f.match(excluded_dirs) || excluded_files.include?(f)
   end
 
-  spec.required_ruby_version = '>= 2.6.0'
+  spec.required_ruby_version = '>= 2.7.0'
 
   spec.add_dependency 'active_model_validations_reflection'
   spec.add_dependency 'acts_as_list', '>= 1.0.4'
-  spec.add_dependency 'cocooned', '~> 2.0'
+  spec.add_dependency 'cocooned', '~> 2.0', '>= 2.4'
   spec.add_dependency 'rails', '>= 6.1.0'
 
   # Development tools
   spec.add_development_dependency 'bundler', '~> 2.1'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.10'
-  spec.add_development_dependency 'shoulda-matchers', '~> 6.0'
 end

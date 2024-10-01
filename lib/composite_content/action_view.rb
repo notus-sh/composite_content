@@ -56,18 +56,18 @@ module CompositeContent
     end
 
     # Alias to cocooned_move_item_up_link
-    def composite_content_move_block_up_link(*args, &block)
-      cocooned_move_item_up_link(*args, &block)
+    def composite_content_move_block_up_link(...)
+      cocooned_move_item_up_link(...)
     end
 
     # Alias to cocooned_move_item_down_link
-    def composite_content_move_block_down_link(*args, &block)
-      cocooned_move_item_down_link(*args, &block)
+    def composite_content_move_block_down_link(...)
+      cocooned_move_item_down_link(...)
     end
 
     # Alias to cocooned_remove_item_link
-    def composite_content_remove_block_link(*args, &block)
-      cocooned_remove_item_link(*args, &block)
+    def composite_content_remove_block_link(...)
+      cocooned_remove_item_link(...)
     end
 
     protected
