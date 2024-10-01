@@ -4,7 +4,7 @@ PATH
     composite_content (2.1.1)
       active_model_validations_reflection
       acts_as_list (>= 1.0.4)
-      cocooned (~> 2.0)
+      cocooned (~> 2.0, >= 2.4)
       rails (>= 6.1.0)
 
 GEM
