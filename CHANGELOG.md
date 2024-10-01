@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## Version 2.2.0 (2024-10-01)
+
 ### Changed
 
 * Reintroduce Ruby 2.7 into the test matrix (#20)  
