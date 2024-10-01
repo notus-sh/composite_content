@@ -10,6 +10,7 @@ group :development, :test do
   gem 'puma'
   gem 'sprockets-rails' # Optional in Rails 7.0+
   gem 'sqlite3'
+  gem 'shoulda-matchers', '~> 6.0'
 
   gem 'rubocop', require: false
   gem 'rubocop-performance', require: false
