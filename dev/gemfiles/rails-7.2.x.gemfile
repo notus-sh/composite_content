@@ -6,8 +6,8 @@ gemspec path: '../..'
 
 group :development, :test do
   gem 'rails', '~> 7.2.0'
-  gem 'sqlite3', '~> 1.4'
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'sqlite3', '~> 1.4'
 
   gem 'net-imap'
   gem 'net-pop'
