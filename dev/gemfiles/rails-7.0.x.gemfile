@@ -5,6 +5,10 @@ source 'https://rubygems.org'
 gemspec path: '../..'
 
 group :development, :test do
+  gem 'drb'
+  gem 'bigdecimal'
+  gem 'logger'
+  gem 'mutex_m'
   gem 'rails', '~> 7.0.0'
   gem 'shoulda-matchers', '~> 5.0'
   gem 'sqlite3', '~> 1.4'

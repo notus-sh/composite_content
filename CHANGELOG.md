@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+### Changed
+
+* Add Ruby 3.4 to the test matrix (#23)
+
 ## Version 2.2.0 (2024-10-01)
 
 ### Changed
