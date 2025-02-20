@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'logger'
 Bundler.require(:default, :development)
 
 # Configure Rails Envinronment
