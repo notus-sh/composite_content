@@ -55,9 +55,12 @@ class ArticlesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def article_params
-    params.require(:article)
-          .permit(:title,
-                  composite_content_attributes: Article.strong_parameters_for_composite_content)
+    params.expect(
+      article: [
+        :title,
+        { composite_content_attributes: Article.strong_parameters_for_composite_content }
+      ]
+    )
   end
 end
 # rubocop:enable Rails/I18nLocaleTexts
