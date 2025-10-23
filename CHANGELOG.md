@@ -6,8 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## Version 2.3.0 (2025-10-23)
+
 ### Changed
 
+* Configure dependabot to auto-update Github Actions (#29)
+* Drop support for Rails 7.1, Ruby 2.7 and Ruby 3.0 (#28)
+* Add support for Rails 8.1 (#27)
 * Drop support for Rails 7.0 (#26)
 * Add Ruby 3.4 to the test matrix (#23)
 
