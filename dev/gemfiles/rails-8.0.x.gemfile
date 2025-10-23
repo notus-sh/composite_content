@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+gemspec path: '../..'
+
+group :development, :test do
+  gem 'logger'
+  gem 'rails', '~> 8.0.0'
+  gem 'shoulda-matchers', '~> 6.0'
+  gem 'sqlite3'
+
+  gem 'net-imap'
+  gem 'net-pop'
+  gem 'net-smtp'
+end
