@@ -8,7 +8,7 @@ gemspec
 group :development, :test do
   # Dummy app dependencies
   gem 'puma'
-  gem 'shoulda-matchers', '~> 6.0'
+  gem 'shoulda-matchers', '~> 7.0'
   gem 'sprockets-rails' # Optional in Rails 7.0+
   gem 'sqlite3'
 
