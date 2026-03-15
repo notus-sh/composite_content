@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ## [Unreleased]
 
+## Version 2.3.1 (2026-03-15)
+
 ### Changed
 
 * Soften version constraint on `cocooned` to support `cocooned ~> 3.0` (#35)
