@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 
 ### Changed
 
+* Soften version constraint on `cocooned` to support `cocooned ~> 3.0` (#35)
 * Add Ruby 4.0 to the test matrix (#34)
 
 ## Version 2.3.0 (2025-10-23)
