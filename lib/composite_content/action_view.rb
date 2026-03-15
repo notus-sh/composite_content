@@ -48,9 +48,9 @@ module CompositeContent
       label, form, block_type, options = *args
       label ||= composite_content_default_label(block_type)
       opts = (options || {}).except(:count, :form_name, :force_non_association_create)
-                            .merge!(form_name: :form,
-                                    partial: "#{CompositeContent::Engine.config.views_path}/block/form",
-                                    wrap_object: ->(b) { composite_content_wrap_block(b, block_type) })
+             .merge!(form_name: :form,
+                     partial: "#{CompositeContent::Engine.config.views_path}/block/form",
+                     wrap_object: ->(b) { composite_content_wrap_block(b, block_type) })
 
       cocooned_add_item_link(label, form, :blocks, opts)
     end
